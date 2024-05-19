@@ -3,8 +3,8 @@
 ## python manage.py inspectdb > customadmin/models.py
 
 
--- copy customadmin/models.py file and remove customadmin/models.py file
--- create customadmin/models.py and paste customadmin/models.py
+copy customadmin/models.py file and remove customadmin/models.py file
+create customadmin/models.py and paste customadmin/models.py
 
 
 ```
