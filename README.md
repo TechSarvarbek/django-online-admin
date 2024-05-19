@@ -7,7 +7,7 @@
 -- create customadmin/models.py and paste customadmin/models.py
 
 
-# python manage.py makemigrations customadmin
-# python manage.py migrate
-# python manage.py createsuperuser
-# python manage.py runserver
+``` python manage.py makemigrations customadmin ```
+``` python manage.py migrate ```
+``` python manage.py createsuperuser ```
+``` python manage.py runserver```
