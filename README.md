@@ -1,6 +1,6 @@
 ## change .env file
 
-## python manage.py inspectdb > customadmin/models.py
+```python manage.py inspectdb > customadmin/models.py```
 
 
 copy customadmin/models.py file and remove customadmin/models.py file
