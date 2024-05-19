@@ -1,0 +1,35 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+
+{% block title %}{{ title }} | admin{% endblock %}
+
+{% block branding %}
+<h1 id="site-name"><a href="{% url 'admin:index' %}">admin</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
+
+{% block nav-sidebar %}
+<ul class="nav nav-sidebar">
+    {% block nav-apps %}
+    {% for app in app_list %}
+    <li{% if app.models %} class="dropdown"{% endif %}>
+        <a href="{% if app.models %}#{{ app.app_label }}"{% else %}{{ app.app_url }}{% endif %}"{% if app.models %} class="dropdown-toggle" data-toggle="dropdown"{% endif %}>
+            <span class="glyphicon glyphicon-{{ app.icon }}"></span>
+            {% trans app.name %}
+            {% if app.models %}
+            <span class="caret"></span>
+            {% endif %}
+        </a>
+        {% if app.models %}
+        <ul class="dropdown-menu">
+            {% for model in app.models %}
+            <li><a href="{{ model.admin_url }}">{{ model.name }}</a></li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </li>
+    {% endfor %}
+    {% endblock %}
+</ul>
+{% endblock %}
